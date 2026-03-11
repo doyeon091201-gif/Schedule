@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>개인 시간표</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-root">
+    <header class="app-header">
+      <div class="app-title">개인 시간표</div>
+      <div class="student-id-group">
+        <label class="student-id-label" for="studentIdInput">
+          학번 입력
+        </label>
+        <div class="student-id-input-row">
+          <input
+            id="studentIdInput"
+            type="text"
+            inputmode="numeric"
+            pattern="\d*"
+            maxlength="5"
+            class="student-id-input"
+            placeholder="예: 20106 또는 2106"
+          />
+          <button class="student-id-apply-button" id="applyStudentIdButton">
+            적용
+          </button>
+        </div>
+        <!-- <p class="student-id-help">
+          형식: <strong>학년 + 반 + 번호</strong> (4자리 또는 5자리)
+        </p> -->
+      </div>
+    </header>
+
+    <main class="app-main">
+      <section class="timetable-card">
+        <div class="timetable-header">
+          <span class="timetable-title">시간표</span>
+          <span class="timetable-subtitle" id="weekInfo">2학년 1반</span>
+        </div>
+
+        <div class="timetable-wrapper">
+          <div class="timetable-grid" id="timetableGrid">
+            <!-- 헤더 행 -->
+            <div class="cell cell-corner"></div>
+            <div class="cell cell-day">월</div>
+            <div class="cell cell-day">화</div>
+            <div class="cell cell-day">수</div>
+            <div class="cell cell-day">목</div>
+            <div class="cell cell-day">금</div>
+
+            <!-- JS에서 교시·요일별 셀을 자동 생성합니다. -->
+          </div>
+        </div>
+
+        <div class="bottom-bar">
+          <button class="primary-button" id="saveImageButton">사진으로 저장</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
